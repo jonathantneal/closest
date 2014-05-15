@@ -1,0 +1,25 @@
+{
+	"name": "Element.closest",
+	"description": "Get the closest element matching a selector up the DOM tree",
+	"version": "0.0.1",
+	"main": ["closest.js", "closest.legacy.js"],
+	"license": "CC0-1.0",
+	"ignore": [
+		".editorconfig",
+		".jshintrc",
+		"bower.json",
+		"LICENSE.md",
+		"README.md"
+	],
+	"keywords": [
+		"element",
+		"prototype",
+		"closest",
+		"matches"
+	],
+	"homepage": "https://github.com/jonathantneal/closest",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/jonathantneal/closest.git"
+	}
+}
