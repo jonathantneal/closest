@@ -22,5 +22,5 @@
 	};
 })(
 	Element.prototype,
-	(getComputedStyle(document.documentElement).cssText.match(/-(moz|webkit|ms)-/) || [])[1] || ''
+	(typeof getComputedStyle === 'function' && getComputedStyle(document.documentElement).cssText.match(/-(moz|webkit|ms)-/) || [])[1] || ''
 );
