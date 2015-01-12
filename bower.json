@@ -1,8 +1,8 @@
 {
 	"name": "Element.closest",
 	"description": "Get the closest element matching a selector up the DOM tree",
-	"version": "0.0.1",
-	"main": ["closest.js", "closest.legacy.js"],
+	"version": "1.0.0",
+	"main": ["closest.js"],
 	"license": "CC0-1.0",
 	"ignore": [
 		".editorconfig",
