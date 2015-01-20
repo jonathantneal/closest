@@ -6,7 +6,7 @@
 	if (typeof ELEMENT.closest != 'function') ELEMENT.closest = function (selector) {
 		var node = this;
 
-		while (node) {
+		while (node && node.nodeType != 11) {
 			if (node.matches(selector)) return node;
 			else node = node.parentElement;
 		}
