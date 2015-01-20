@@ -41,11 +41,15 @@ if (widget.matches('[data-active]') || widget.matches('.widget--active')) {
 
 ## Browser compatibility
 
-**matches** and **closest** will work in Android 2.2+, Blackberry 7+, Chrome, Firefox 3.6+, Internet Explorer 9+, iOS Safari 4+, Opera 11.5+, and Safari 5+.
+The polyfills for **matches** and **closest** should work in:
 
-The legacy version extends support to Firefox 3.5+, Internet Explorer 8+, iOS Safari 3.2+, Opera 10+, Opera Mini 5+, and Safari 3.1+.
-
-Those are really old browsers, and I don’t see a usecase for IE8 compatibility, which is why it is packaged separately. **closest** is especially useful when delegating events, and Internet Explorer 8 does not support [addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener#Browser_compatibility), and [attachEvent](http://help.dottoro.com/ljinxrmt.php) is an insufficient fallback, as it fires events in the reverse order they are added (read: the opposite order of what you expect and **addEventListener**).
+* Chrome
+* Safari 3.1+, iOS 3.2+
+* Firefox 3.5+
+* Internet Explorer 8+
+* Opera 10+, Opera Mini 5+
+* Android 2.2+
+* Blackberry 7+
 
 ## Prollyfill status
 
@@ -56,7 +60,3 @@ Those are really old browsers, and I don’t see a usecase for IE8 compatibility
 According to [caniuse](http://caniuse.com/matches), **matches** has wide adoption, from IE9 to Firefox 3.6 to iOS4. It is prefix-free in Chrome 34. Nothing like **closest** <s>exists</s> existed outside of libraries like [jQuery](http://api.jquery.com/closest/).
 
 [Chris Coyier](https://twitter.com/chriscoyier)’s excellent blog post [Links with Inline SVG, Staying on Target with Events](http://css-tricks.com/links-inline-svg-staying-target-events/) highlights the need for something like **closest**. After reading it, I decided to throw this together.
-
----
-
-[closest.js](/closest.js) is 429B or 210B minified + gzipped. [closest.legacy.js](/closest.legacy.js) is 688B or 270B minified + gzipped.
