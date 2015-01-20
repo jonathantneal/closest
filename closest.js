@@ -1,7 +1,9 @@
-(function (ELEMENT, PREFIX) {
-	ELEMENT.matches = ELEMENT.matches || ELEMENT[PREFIX + 'MatchesSelector'];
+(function (ELEMENT) {
+	if (typeof ELEMENT.matches != 'function') {
+		ELEMENT.matches = ELEMENT.msMatchesSelector || ELEMENT.mozMatchesSelector || ELEMENT.webkitMatchesSelector;
+	}
 
-	ELEMENT.closest = ELEMENT.closest || function (selector) {
+	if (typeof ELEMENT.closest != 'function') ELEMENT.closest = function (selector) {
 		var node = this;
 
 		while (node) {
@@ -11,7 +13,4 @@
 
 		return null;
 	};
-})(
-	Element.prototype,
-	(this.getComputedStyle && [].join.call(getComputedStyle(document.documentElement, '')).match(/-(moz|ms|webkit)-/) || [])[1]
-);
+})(Element.prototype);
