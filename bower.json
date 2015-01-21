@@ -9,7 +9,8 @@
 		".jshintrc",
 		"bower.json",
 		"LICENSE.md",
-		"README.md"
+		"README.md",
+		"test/"
 	],
 	"keywords": [
 		"element",
