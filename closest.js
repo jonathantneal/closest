@@ -1,17 +1,19 @@
-(function (ELEMENT, PREFIX) {
-	ELEMENT.matches = ELEMENT.matches || ELEMENT[PREFIX + 'MatchesSelector'];
+(function (ELEMENT) {
+	ELEMENT.matches = ELEMENT.matches
+		|| ELEMENT.msMatchesSelector
+		|| ELEMENT.mozMatchesSelector
+		|| ELEMENT.webkitMatchesSelector;
 
 	ELEMENT.closest = ELEMENT.closest || function (selector) {
 		var node = this;
 
 		while (node) {
-			if (node.matches(selector)) return node;
-			else node = node.parentElement;
+			if (node.matches(selector)) {
+				break;
+			}
+			node = node.parentElement;
 		}
 
-		return null;
+		return node;
 	};
-})(
-	Element.prototype,
-	(this.getComputedStyle && [].join.call(getComputedStyle(document.documentElement, '')).match(/-(moz|ms|webkit)-/) || [])[1]
-);
+}(Element.prototype));
