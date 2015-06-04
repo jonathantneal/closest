@@ -1,5 +1,6 @@
 (function (ELEMENT) {
 	ELEMENT.matches = ELEMENT.matches
+		|| ELEMENT.oMatchesSelector
 		|| ELEMENT.msMatchesSelector
 		|| ELEMENT.mozMatchesSelector
 		|| ELEMENT.webkitMatchesSelector;
