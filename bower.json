@@ -1,25 +1,27 @@
 {
-	"name": "Element.closest",
-	"description": "Get the closest element matching a selector up the DOM tree",
-	"version": "1.0.0",
-	"main": ["closest.js"],
-	"license": "CC0-1.0",
-	"ignore": [
-		".editorconfig",
-		".jshintrc",
-		"bower.json",
-		"LICENSE.md",
-		"README.md"
-	],
-	"keywords": [
-		"element",
-		"prototype",
-		"closest",
-		"matches"
-	],
-	"homepage": "https://github.com/jonathantneal/closest",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/jonathantneal/closest.git"
-	}
+  "name": "Element.closest",
+  "description": "Get the closest element matching a selector up the DOM tree",
+  "main": "closest.js",
+  "license": "CC0-1.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "matches",
+    "closest",
+    "polyfill"
+  ],
+  "homepage": "https://github.com/jonathantneal/closest",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonathantneal/closest.git"
+  },
+  "authors": [
+    "Jonathan Neal <jonathantneal+github@gmail.com> (http://jonathantneal.com)",
+    "Bogdan Chadkin <trysound@yandex.ru>"
+  ]
 }

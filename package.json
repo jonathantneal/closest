@@ -1,0 +1,27 @@
+{
+  "name": "Element.closest",
+  "version": "1.0.1",
+  "description": "Get the closest element matching a selector up the DOM tree",
+  "main": "closest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://trysound@github.com/jonathantneal/closest.git"
+  },
+  "keywords": [
+    "matches",
+    "closest",
+    "polyfill"
+  ],
+  "author": "Jonathan Neal <jonathantneal+github@gmail.com> (http://jonathantneal.com)",
+  "contributors": [
+    "Bogdan Chadkin <trysound@yandex.ru>"
+  ],
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/jonathantneal/closest/issues"
+  },
+  "homepage": "https://github.com/jonathantneal/closest"
+}
