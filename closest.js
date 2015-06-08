@@ -1,20 +1,17 @@
 (function (ELEMENT) {
-	ELEMENT.matches = ELEMENT.matches
-		|| ELEMENT.oMatchesSelector
-		|| ELEMENT.msMatchesSelector
-		|| ELEMENT.mozMatchesSelector
-		|| ELEMENT.webkitMatchesSelector;
+	ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
 
-	ELEMENT.closest = ELEMENT.closest || function (selector) {
-		var node = this;
+	ELEMENT.closest = ELEMENT.closest || function closest(selector) {
+		var element = this;
 
-		while (node) {
-			if (node.matches(selector)) {
+		while (element) {
+			if (element.matches(selector)) {
 				break;
 			}
-			node = node.parentElement;
+
+			element = element.parentElement;
 		}
 
-		return node;
+		return element;
 	};
 }(Element.prototype));
