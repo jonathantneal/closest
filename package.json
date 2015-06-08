@@ -1,6 +1,6 @@
 {
   "name": "element-closest",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Get the closest element matching a selector up the DOM tree",
   "keywords": [
     "closest",
@@ -10,21 +10,21 @@
     "polyfill",
     "standard"
   ],
-  "homepage": "https://github.com/jonathantneal/closest",
-  "bugs": {
-    "url": "https://github.com/jonathantneal/closest/issues"
-  },
   "license": "CC0-1.0",
   "author": "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com/)",
   "contributors": [
     "Bogdan Chadkin <trysound@yandex.ru>"
   ],
   "main": "closest.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jonathan/browserstack-app.git"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://jonathantneal@github.com/jonathantneal/closest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonathantneal/closest/issues"
+  },
+  "homepage": "https://github.com/jonathantneal/closest"
 }
