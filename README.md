@@ -1,5 +1,7 @@
 # closest
 
+[![Join the chat at https://gitter.im/jonathantneal/closest](https://badges.gitter.im/jonathantneal/closest.svg)](https://gitter.im/jonathantneal/closest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > Return the closest element matching a selector up the DOM tree
 
 [![npm][npm-image]][npm-url] [![license][license-image]][license-url]
