@@ -71,15 +71,15 @@ if (widget.matches('[data-active]') || widget.matches('.widget--active')) {
 `closest` is especially useful for delegating events, but remember that
 Internet Explorer 8 does not support [`#Element.addEventListener`].
 
-[changelog-image]: https://img.shields.io/badge/changelog-md-blue.svg?style=flat-square
+[changelog-image]: https://img.shields.io/badge/changelog-md-blue.svg
 [changelog-url]: CHANGELOG.md
 [ci]: https://travis-ci.org/jonathantneal/closest
 [ci-img]: https://img.shields.io/travis/jonathantneal/closest.svg
-[gitter-image]: https://img.shields.io/badge/chat-gitter-blue.svg?style=flat-square
+[gitter-image]: https://img.shields.io/badge/chat-gitter-blue.svg
 [gitter-url]: https://gitter.im/jonathantneal/closest
-[license-image]: https://img.shields.io/npm/l/element-closest.svg?style=flat-square
+[license-image]: https://img.shields.io/npm/l/element-closest.svg
 [license-url]: LICENSE.md
-[npm-image]: https://img.shields.io/npm/v/element-closest.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/element-closest.svg
 [npm-url]: https://www.npmjs.com/package/element-closest
 
 [closest]: https://github.com/jonathantneal/closest
