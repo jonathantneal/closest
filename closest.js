@@ -1,17 +1,31 @@
-(function (ELEMENT) {
-	ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
+// element-closest | CC0-1.0 | github.com/jonathantneal/closest
 
-	ELEMENT.closest = ELEMENT.closest || function closest(selector) {
+if (typeof Element.prototype.matches !== 'function') {
+	Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.mozMatchesSelector || Element.prototype.webkitMatchesSelector || function matches(selector) {
 		var element = this;
+		var elements = (element.document || element.ownerDocument).querySelectorAll(selector);
+		var index = 0;
 
-		while (element) {
-			if (element.matches(selector)) {
-				break;
-			}
-
-			element = element.parentElement;
+		while (elements[index] && elements[index] !== element) {
+			++index;
 		}
 
-		return element;
+		return Boolean(elements[index]);
 	};
-}(Element.prototype));
+}
+
+if (typeof Element.prototype.closest !== 'function') {
+	Element.prototype.closest = function closest(selector) {
+		var element = this;
+
+		while (element && element.nodeType !== 11) {
+			if (element.matches(selector)) {
+				return element;
+			}
+
+			element = element.parentNode;
+		}
+
+		return null;
+	};
+}

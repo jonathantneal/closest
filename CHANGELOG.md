@@ -1,6 +1,7 @@
-# HEAD
+# 2.0.0 (2016-04-07)
 
 - Added linting tests
+- Updated plugin to combine legacy version
 - Updated documentation
 
 # 1.0.3 (2015-06-08)
