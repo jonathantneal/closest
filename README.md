@@ -1,9 +1,17 @@
 # closest
 
-[closest]: https://dom.spec.whatwg.org/#dom-element-closestselectors
-[matches]: https://developer.mozilla.org/en-US/docs/Web/API/Element.matches
+> Return the closest element matching a selector up the DOM tree
 
-[Element.prototype.closest][closest] returns the first element that matches a CSS selector by traversing up the DOM tree starting from (and including) the receiver element.
+[![npm][npm-image]][npm-url] [![status][ci-img]][ci]
+[![license][license-image]][license-url]
+[![changelog][changelog-image]][changelog-url]
+[![gitter][gitter-image]][gitter-url]
+
+[closest] is a polyfill for [`#Element.closest`].
+
+The [`#Element.closest`] method returns the closest ancestor of the current
+element (or the current element itself) which matches the selectors given in
+parameter. If there isn't such an ancestor, it returns null.
 
 ```js
 element.closest(selectorString) //=> element
@@ -13,24 +21,27 @@ This is especially useful for delegating events.
 
 ```js
 document.addEventListener('click', function (event) {
-	// find the anchor element that contains or is the click target itself:
+	// find nearest element up the tree that is an <a>
 	var link = event.target.closest('a');
 
 	if (link) {
-		// do something with the anchor
+		// do something with the <a>
 		event.preventDefault();
 	}
 });
 ```
 
 ## matches
-For the `closest` polyfill to work, this also polyfills [matches][], which is widely supported but often vendor-prefixed.
+
+The  also polyfills [`#Element.matches`], which is
+widely supported but often vendor-prefixed.
 
 ```js
 element.matches(selectorString) //=> boolean
 ```
 
-`matches` is especially useful for shorthanding `hasAttribute` or `classList.contains` with selectors.
+`matches` is especially useful for short-handing `hasAttribute` or
+`classList.contains` with selectors.
 
 ```js
 var widget = document.querySelector('.custom-widget');
@@ -42,22 +53,36 @@ if (widget.matches('[data-active]') || widget.matches('.widget--active')) {
 
 ## Browser compatibility
 
-- Internet Explorer 9+
-- Firefox 3.6+
-- Chrome
-- Opera 11.5+
-- Android 2.2+
-- Blackberry 7+
-- iOS Safari 4+
-- Safari 5+
+| Browser           | Native Support | Polyfill Support |
+| ----------------- | -------------- | ---------------- |
+| Android           | ✘              | 2.2+             |
+| Blackberry        | ✘              | 7+               |
+| Chrome            | 41+            | 4 - 40           |
+| Edge              | ✘              | 12+              |
+| Firefox           | 35+            | 3.5 - 34         |
+| Internet Explorer | ✘              | 8+               |
+| Opera             | 28+            | 10 - 27          |
+| Opera Mini        | ✘              | 5+               |
+| Safari (iOS)      | 9              | 3.2 - 8.4        |
+| Safari (MacOS)    | 9.2+           | 3.1 - 8          |
 
-**The legacy version extends support to**
+### Internet Explorer 8
 
-- Internet Explorer 8+
-- Firefox 3.5+
-- iOS Safari 3.2+
-- Opera 10+
-- Opera Mini 5+
-- Safari 3.1+.
+`closest` is especially useful for delegating events, but remember that
+Internet Explorer 8 does not support [`#Element.addEventListener`].
 
-Those are really old browsers, and I don’t see a usecase for IE8 compatibility, which is why it is packaged separately. `closest` is especially useful when delegating events, and Internet Explorer 8 does not support [addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener#Browser_compatibility), and [attachEvent](http://help.dottoro.com/ljinxrmt.php) is an insufficient fallback, as it fires events in the reverse order they are added (read: the opposite order of what you expect and `addEventListener`).
+[changelog-image]: https://img.shields.io/badge/changelog-md-blue.svg?style=flat-square
+[changelog-url]: CHANGELOG.md
+[ci]: https://travis-ci.org/jonathantneal/closest
+[ci-img]: https://img.shields.io/travis/jonathantneal/closest.svg
+[gitter-image]: https://img.shields.io/badge/chat-gitter-blue.svg?style=flat-square
+[gitter-url]: https://gitter.im/jonathantneal/closest
+[license-image]: https://img.shields.io/npm/l/element-closest.svg?style=flat-square
+[license-url]: LICENSE.md
+[npm-image]: https://img.shields.io/npm/v/element-closest.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/element-closest
+
+[closest]: https://github.com/jonathantneal/closest
+[`#Element.closest`]: https://dom.spec.whatwg.org/#dom-element-closest
+[`#Element.matches`]: https://dom.spec.whatwg.org/#dom-element-matches
+[`#Element.addEventListener`]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener#Browser_compatibility
