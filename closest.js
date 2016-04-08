@@ -9,7 +9,7 @@
 				break;
 			}
 
-			element = element.parentElement;
+			element.parentNode instanceof Element ? element = element.parentNode : element = null;
 		}
 
 		return element;
