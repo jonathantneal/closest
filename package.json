@@ -1,6 +1,6 @@
 {
   "name": "element-closest",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Return the closest element matching a selector up the DOM tree",
   "main": "closest.js",
   "scripts": {

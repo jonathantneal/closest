@@ -1,3 +1,7 @@
+# 2.0.1 (2016-04-08)
+
+- Fixed an issue referencing the current nodeType
+
 # 2.0.0 (2016-04-07)
 
 - Added linting tests
