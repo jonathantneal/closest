@@ -18,7 +18,7 @@ if (typeof Element.prototype.closest !== 'function') {
 	Element.prototype.closest = function closest(selector) {
 		var element = this;
 
-		while (element && element.nodeType !== 11) {
+		while (element && element.nodeType === 1) {
 			if (element.matches(selector)) {
 				return element;
 			}
