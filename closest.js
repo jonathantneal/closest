@@ -1,5 +1,5 @@
 // element-closest | CC0-1.0 | github.com/jonathantneal/closest
-(function(Element) {
+(function (Element) {
 	if (typeof Element.prototype.matches !== 'function') {
 		Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.mozMatchesSelector || Element.prototype.webkitMatchesSelector || function matches(selector) {
 			var element = this;
