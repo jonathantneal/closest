@@ -90,7 +90,7 @@
 		"no-obj-calls": [2],
 		"no-octal-escape": [2],
 		"no-octal": [2],
-		"no-param-reassign": [2, { "props": true }],
+		"no-param-reassign": [2, { "props": false }],
 		"no-path-concat": [2],
 		"no-plusplus": [0],
 		"no-process-env": [2],
