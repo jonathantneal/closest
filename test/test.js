@@ -1,57 +1,70 @@
-var tests = 0, failures = 0
+var tests = 0;
+var failures = 0;
 
 function equal(expected, result) {
-	if (expected !== result) throw new Error("got " + result)
+	if (expected !== result) {
+		throw new Error('got ' + result);
+	}
 }
 
 function test(name, fn) {
-	var error
+	var error;
+
 	try {
-		fn.call()
-	} catch(e) {
-		error = e
+		fn.call();
+	} catch (e) {
+		error = e;
 	}
 
 	if (error) {
-		console.error(name + " FAILED: " + error.toString())
-		failures++
+		console.error(name + ' FAILED: ' + error.toString());
+
+		failures++;
 	} else {
-		tests++
+		tests++;
 	}
 }
 
 function find(tagName) {
-	return document.getElementsByTagName(tagName)[0]
+	return document.getElementsByTagName(tagName)[0];
 }
 
-test("find closest link", function() {
-	var span = find('span')
-	equal(span.parentNode, span.closest('a'))
-})
+test('find closest link', function () {
+	var span = find('span');
 
-test("find self", function() {
-	var link = find('a')
-	equal(link, link.closest('a[href]'))
-})
+	equal(span.parentNode, span.closest('a'));
+});
 
-test("find <html> element", function() {
-	var link = find('a')
-	equal(document.documentElement, link.closest('.no-js'))
-})
+test('find self', function () {
+	var link = find('a');
+	equal(link, link.closest('a[href]'));
+});
 
-test("stop at first match", function() {
-	var link = find('a')
-	var item = link.closest('.task-item')
-	equal('LI', item.nodeName)
-})
+test('find <html> element', function () {
+	var link = find('a');
 
-test("not found", function() {
-	var link = find('a')
-	equal(null, link.closest('.nonexistent'))
-})
+	equal(document.documentElement, link.closest('.no-js'));
+});
 
-var results = document.getElementById('results')
-results.textContent = tests + " passed, " + failures + " failures."
+test('stop at first match', function () {
+	var link = find('a');
+	var item = link.closest('.task-item');
 
-if (failures > 0) results.className = 'failed'
-else results.className = 'passed'
+	equal('LI', item.nodeName);
+});
+
+test('not found', function () {
+	var link = find('a');
+
+	equal(null, link.closest('.nonexistent'));
+});
+
+var results = document.getElementById('results');
+
+results.textContent = tests + ' passed, ' + failures + ' failures.';
+
+if (failures > 0) {
+	results.className = 'failed';
+} else {
+	results.className = 'passed';
+}
