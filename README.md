@@ -2,10 +2,11 @@
 
 > Return the closest element matching a selector up the DOM tree
 
-[![npm][npm-image]][npm-url] [![status][ci-img]][ci]
-[![license][license-image]][license-url]
-[![changelog][changelog-image]][changelog-url]
-[![gitter][gitter-image]][gitter-url]
+[![NPM Version][npm-img]][npm-url]
+[![Build Status][cli-img]][cli-url]
+[![Licensing][lic-image]][lic-url]
+[![Changelog][log-image]][log-url]
+[![Gitter Chat][git-image]][git-url]
 
 [closest] is a polyfill for [`#Element.closest`].
 
@@ -55,34 +56,34 @@ if (widget.matches('[data-active]') || widget.matches('.widget--active')) {
 
 | Browser           | Native Support | Polyfill Support |
 | ----------------- | -------------- | ---------------- |
-| Android           | ✘              | 2.2+             |
+| Android           | 53             | 2.2+             |
 | Blackberry        | ✘              | 7+               |
 | Chrome            | 41+            | 4 - 40           |
 | Edge              | ✘              | 12+              |
 | Firefox           | 35+            | 3.5 - 34         |
 | Internet Explorer | ✘              | 8+               |
 | Opera             | 28+            | 10 - 27          |
-| Opera Mini        | ✘              | 5+               |
-| Safari (iOS)      | 9              | 3.2 - 8.4        |
-| Safari (MacOS)    | 9.2+           | 3.1 - 8          |
+| Opera Mobile      | 37+            | 12+              |
+| Safari (iOS)      | 9.2+           | 3.2 - 8.4        |
+| Safari (MacOS)    | 9.1+           | 3.1 - 8          |
 
 ### Internet Explorer 8
 
 `closest` is especially useful for delegating events, but remember that
 Internet Explorer 8 does not support [`#Element.addEventListener`].
 
-[changelog-image]: https://img.shields.io/badge/changelog-md-blue.svg
-[changelog-url]: CHANGELOG.md
-[ci]: https://travis-ci.org/jonathantneal/closest
-[ci-img]: https://img.shields.io/travis/jonathantneal/closest.svg
-[gitter-image]: https://img.shields.io/badge/chat-gitter-blue.svg
-[gitter-url]: https://gitter.im/jonathantneal/closest
-[license-image]: https://img.shields.io/npm/l/element-closest.svg
-[license-url]: LICENSE.md
-[npm-image]: https://img.shields.io/npm/v/element-closest.svg
-[npm-url]: https://www.npmjs.com/package/element-closest
-
 [closest]: https://github.com/jonathantneal/closest
 [`#Element.closest`]: https://dom.spec.whatwg.org/#dom-element-closest
 [`#Element.matches`]: https://dom.spec.whatwg.org/#dom-element-matches
 [`#Element.addEventListener`]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener#Browser_compatibility
+
+[npm-url]: https://www.npmjs.com/package/element-closest
+[npm-img]: https://img.shields.io/npm/v/element-closest.svg?style=flat-square
+[cli-url]: https://travis-ci.org/jonathantneal/closest
+[cli-img]: https://img.shields.io/travis/jonathantneal/closest.svg?style=flat-square
+[lic-url]: LICENSE.md
+[lic-image]: https://img.shields.io/npm/l/element-closest.svg?style=flat-square
+[log-url]: CHANGELOG.md
+[log-image]: https://img.shields.io/badge/changelog-md-blue.svg?style=flat-square
+[git-url]: https://gitter.im/jonathantneal/closest
+[git-image]: https://img.shields.io/badge/chat-gitter-blue.svg?style=flat-square
