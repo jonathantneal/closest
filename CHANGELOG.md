@@ -1,11 +1,11 @@
 # Changes to closest
 
-# 2.0.2 (October 26, 2016)
+### 2.0.2 (October 26, 2016)
 
 - Updated `Element` reference as `window.Element`
 - Updated project configuration
 
-# 2.0.1 (April 8, 2016)
+### 2.0.1 (April 8, 2016)
 
 - Fixed an issue referencing the current nodeType
 

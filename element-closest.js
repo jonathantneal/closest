@@ -1,5 +1,3 @@
-// element-closest | CC0-1.0 | github.com/jonathantneal/closest
-
 (function (ElementProto) {
 	if (typeof ElementProto.matches !== 'function') {
 		ElementProto.matches = ElementProto.msMatchesSelector || ElementProto.mozMatchesSelector || ElementProto.webkitMatchesSelector || function matches(selector) {

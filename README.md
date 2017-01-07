@@ -1,12 +1,10 @@
-# closest
-
-> Return the closest element matching a selector up the DOM tree
+# closest [<img src="https://upload.wikimedia.org/wikipedia/commons/5/52/WHATWG_DOM_logo.svg" alt="WHATWG DOM logo" width="90" height="90" align="right">][closest]
 
 [![NPM Version][npm-img]][npm-url]
 [![Build Status][cli-img]][cli-url]
-[![Licensing][lic-image]][lic-url]
-[![Changelog][log-image]][log-url]
-[![Gitter Chat][git-image]][git-url]
+[![Licensing][lic-img]][lic-url]
+[![Changelog][log-img]][log-url]
+[![Gitter Chat][git-img]][git-url]
 
 [closest] is a polyfill for [`#Element.closest`].
 
@@ -78,12 +76,12 @@ Internet Explorer 8 does not support [`#Element.addEventListener`].
 [`#Element.addEventListener`]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener#Browser_compatibility
 
 [npm-url]: https://www.npmjs.com/package/element-closest
-[npm-img]: https://img.shields.io/npm/v/element-closest.svg?style=flat-square
+[npm-img]: https://img.shields.io/npm/v/element-closest.svg
 [cli-url]: https://travis-ci.org/jonathantneal/closest
-[cli-img]: https://img.shields.io/travis/jonathantneal/closest.svg?style=flat-square
+[cli-img]: https://img.shields.io/travis/jonathantneal/closest.svg
 [lic-url]: LICENSE.md
-[lic-image]: https://img.shields.io/npm/l/element-closest.svg?style=flat-square
+[lic-img]: https://img.shields.io/npm/l/element-closest.svg
 [log-url]: CHANGELOG.md
-[log-image]: https://img.shields.io/badge/changelog-md-blue.svg?style=flat-square
+[log-img]: https://img.shields.io/badge/changelog-md-blue.svg
 [git-url]: https://gitter.im/jonathantneal/closest
-[git-image]: https://img.shields.io/badge/chat-gitter-blue.svg?style=flat-square
+[git-img]: https://img.shields.io/badge/chat-gitter-blue.svg

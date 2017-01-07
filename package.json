@@ -2,7 +2,7 @@
   "name": "element-closest",
   "version": "2.0.2",
   "description": "Return the closest element matching a selector up the DOM tree",
-  "author": "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com)",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jonathantneal/closest",
   "homepage": "https://github.com/jonathantneal/closest#readme",
@@ -12,22 +12,30 @@
     "element-closest.js"
   ],
   "scripts": {
-    "test": "eslint *.js --ignore-path .gitignore && jscs *.js"
+    "lint": "npm run lint:editor && npm run lint:js",
+    "lint:editor": "echint",
+    "lint:js": "eslint *.js --cache --ignore-pattern .gitignore",
+    "prepublish": "npm test",
+    "test": "npm run lint"
   },
   "engines": {
     "node": ">=4.0.0"
   },
   "devDependencies": {
-    "eslint": "^3.8.1",
-    "eslint-config-10up": "github:jonathantneal/eslint-config-10up",
-    "jscs": "^3.0.7",
-    "jscs-config-10up": "github:jonathantneal/jscs-config-10up"
+    "echint": "^2.1.1",
+    "echint-config-dev": "1.0.0",
+    "eslint": "^3.13.0",
+    "eslint-config-dev": "1.0.0",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "echint": {
+    "extends": "dev"
   },
   "eslintConfig": {
-    "extends": "10up"
-  },
-  "jscsConfig": {
-    "preset": "10up"
+    "extends": "dev"
   },
   "keywords": [
     "polyfill",
