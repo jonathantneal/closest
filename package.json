@@ -28,6 +28,18 @@
     "eslint-config-dev": "1.0.0",
     "pre-commit": "^1.2.2"
   },
+  "browserstarget": [
+    "Android < 53",
+    "BlackBerry > 1",
+    "Chrome < 41",
+    "Edge > 1",
+    "Explorer > 1",
+    "Firefox < 35",
+    "iOS < 9.2",
+    "Opera < 28",
+    "OperaMobile < 37",
+    "Safari < 9.1"
+  ],
   "pre-commit": [
     "lint"
   ],
