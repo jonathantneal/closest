@@ -57,7 +57,7 @@ if (widget.matches('[data-active]') || widget.matches('.widget--active')) {
 | Android           | 53             | 2.2+             |
 | Blackberry        | ✘              | 7+               |
 | Chrome            | 41+            | 4 - 40           |
-| Edge              | ✘              | 12+              |
+| Edge              | 15             | 12 - 14          |
 | Firefox           | 35+            | 3.5 - 34         |
 | Internet Explorer | ✘              | 8+               |
 | Opera             | 28+            | 10 - 27          |
