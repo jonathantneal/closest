@@ -32,7 +32,7 @@ document.addEventListener('click', function (event) {
 
 ## matches
 
-The  also polyfills [`#Element.matches`], which is
+This library also polyfills [`#Element.matches`], which is
 widely supported but often vendor-prefixed.
 
 ```js
@@ -49,6 +49,13 @@ if (widget.matches('[data-active]') || widget.matches('.widget--active')) {
 	// do something with the active widget
 }
 ```
+
+## Installation
+```bash
+npm install --save element-closest #npm
+yarn add element-closest #yarn
+```
+
 
 ## Browser compatibility
 
