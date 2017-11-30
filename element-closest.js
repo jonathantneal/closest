@@ -1,4 +1,7 @@
 (function (ElementProto) {
+  if (!ElementProto) {
+    return;
+  }
 	if (typeof ElementProto.matches !== 'function') {
 		ElementProto.matches = ElementProto.msMatchesSelector || ElementProto.mozMatchesSelector || ElementProto.webkitMatchesSelector || function matches(selector) {
 			var element = this;
@@ -28,4 +31,4 @@
 			return null;
 		};
 	}
-})(window.Element.prototype);
+})(typeof window !== 'undefined' && window.Element.prototype);
