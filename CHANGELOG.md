@@ -1,5 +1,10 @@
 # Changes to closest
 
+### 3.0.0 (December 20, 2018)
+
+- Rewritten for usage within Node environments
+- Improved documentation
+
 ### 2.0.2 (October 26, 2016)
 
 - Updated `Element` reference as `window.Element`

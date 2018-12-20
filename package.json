@@ -1,62 +1,59 @@
 {
   "name": "element-closest",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Return the closest element matching a selector up the DOM tree",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "jonathantneal/closest",
   "homepage": "https://github.com/jonathantneal/closest#readme",
   "bugs": "https://github.com/jonathantneal/closest/issues",
-  "main": "element-closest.js",
+  "main": "index.js",
+  "module": "index.mjs",
   "files": [
-    "element-closest.js"
+    "index.js",
+    "index.js.map",
+    "index.mjs",
+    "index.mjs.map",
+    "browser.js"
   ],
   "scripts": {
-    "lint": "npm run lint:editor && npm run lint:js",
-    "lint:editor": "echint",
-    "lint:js": "eslint *.js --cache --ignore-pattern .gitignore",
-    "prepublish": "npm test",
-    "test": "npm run lint"
+    "build": "npm run build:node && npm run build:browser",
+    "build:node": "rollup --config",
+    "build:browser": "cross-env NODE_ENV=browser rollup --config",
+    "prepublish": "npm run test && npm run build",
+    "test": "eslint src/*.js --cache --ignore-path .gitignore --quiet"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6.0.0"
   },
   "devDependencies": {
-    "echint": "^2.1.1",
-    "echint-config-dev": "1.0.0",
-    "eslint": "^3.13.0",
-    "eslint-config-dev": "1.0.0",
-    "pre-commit": "^1.2.2"
-  },
-  "browserstarget": [
-    "Android < 53",
-    "BlackBerry > 1",
-    "Chrome < 41",
-    "Edge > 1",
-    "Explorer > 1",
-    "Firefox < 35",
-    "iOS < 9.2",
-    "Opera < 28",
-    "OperaMobile < 37",
-    "Safari < 9.1"
-  ],
-  "pre-commit": [
-    "lint"
-  ],
-  "echint": {
-    "extends": "dev"
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.10.0",
+    "eslint-config-dev": "^2.0.0",
+    "pre-commit": "^1.2.2",
+    "rollup": "^0.68.1",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-terser": "^3.0.0"
   },
   "eslintConfig": {
-    "extends": "dev"
+    "extends": "dev",
+    "parser": "babel-eslint"
   },
   "keywords": [
-    "polyfill",
+    "postcss",
+    "css",
+    "postcss-plugin",
     "dom",
     "document",
     "element",
+    "node",
     "closest",
     "matches",
-    "standard",
-    "specification"
+    "polyfill",
+    "web",
+    "standard"
   ]
 }

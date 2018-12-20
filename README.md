@@ -1,61 +1,54 @@
-# closest [<img src="https://upload.wikimedia.org/wikipedia/commons/5/52/WHATWG_DOM_logo.svg" alt="WHATWG DOM logo" width="90" height="90" align="right">][closest]
+# closest [<img src="https://jonathantneal.github.io/dom-logo.svg" alt="closest" width="90" height="90" align="right">][closest]
 
 [![NPM Version][npm-img]][npm-url]
 [![Build Status][cli-img]][cli-url]
-[![Licensing][lic-img]][lic-url]
-[![Changelog][log-img]][log-url]
-[![Gitter Chat][git-img]][git-url]
+[![Support Chat][git-img]][git-url]
 
 [closest] is a polyfill for [`#Element.closest`].
 
-The [`#Element.closest`] method returns the closest ancestor of the current
-element (or the current element itself) which matches the selectors given in
-parameter. If there isn't such an ancestor, it returns null.
+```bash
+npm install element-closest
+```
+
+The [`#Element.closest`] method returns the closest element that matches a
+selector. It returns the element itself, one of its ancestor, or `null` if
+there isn't any match.
 
 ```js
-element.closest(selectorString) //=> element
+element.closest(selectorString) //=> Element or null
 ```
 
 This is especially useful for delegating events.
 
 ```js
 document.addEventListener('click', function (event) {
-	// find nearest element up the tree that is an <a>
-	var link = event.target.closest('a');
+  // find nearest element up the tree that is an <a>
+  var link = event.target.closest('a');
 
-	if (link) {
-		// do something with the <a>
-		event.preventDefault();
-	}
+  if (link) {
+    // do something with the <a>
+    event.preventDefault();
+  }
 });
 ```
 
-## matches
+The script is approximately 258 bytes when minified and gzipped.
 
-This library also polyfills [`#Element.matches`], which is
-widely supported but often vendor-prefixed.
+## Usage
+
+For immediate usage, add this script to your document:
+
+```html
+<script src="https://unpkg.com/element-closest/browser"></script>
+```
+
+For Node usage, run [closest] with your `window` object:
 
 ```js
-element.matches(selectorString) //=> boolean
+const elementClosest = require('element-closest');
+
+elementClosest(window); // this is used to reference window.Element
 ```
-
-`matches` is especially useful for short-handing `hasAttribute` or
-`classList.contains` with selectors.
-
-```js
-var widget = document.querySelector('.custom-widget');
-
-if (widget.matches('[data-active]') || widget.matches('.widget--active')) {
-	// do something with the active widget
-}
-```
-
-## Installation
-```bash
-npm install --save element-closest #npm
-yarn add element-closest #yarn
-```
-
 
 ## Browser compatibility
 
@@ -77,18 +70,34 @@ yarn add element-closest #yarn
 `closest` is especially useful for delegating events, but remember that
 Internet Explorer 8 does not support [`#Element.addEventListener`].
 
-[closest]: https://github.com/jonathantneal/closest
+## matches
+
+This library also polyfills [`#Element.matches`], which is widely supported but
+often vendor-prefixed.
+
+```js
+element.matches(selectorString) //=> boolean
+```
+
+`matches` is especially useful for short-handing `hasAttribute` or
+`classList.contains` with selectors.
+
+```js
+const widget = document.querySelector('.custom-widget');
+
+if (widget.matches('[data-active]') || widget.matches('.widget--active')) {
+  // do something with the active widget
+}
+```
+
+[cli-img]: https://img.shields.io/travis/jonathantneal/closest/master.svg
+[cli-url]: https://travis-ci.org/jonathantneal/closest
+[git-img]: https://img.shields.io/badge/support-chat-blue.svg
+[git-url]: https://gitter.im/postcss/postcss
+[npm-img]: https://img.shields.io/npm/v/element-closest.svg
+[npm-url]: https://www.npmjs.com/package/element-closest
+
 [`#Element.closest`]: https://dom.spec.whatwg.org/#dom-element-closest
 [`#Element.matches`]: https://dom.spec.whatwg.org/#dom-element-matches
 [`#Element.addEventListener`]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener#Browser_compatibility
-
-[npm-url]: https://www.npmjs.com/package/element-closest
-[npm-img]: https://img.shields.io/npm/v/element-closest.svg
-[cli-url]: https://travis-ci.org/jonathantneal/closest
-[cli-img]: https://img.shields.io/travis/jonathantneal/closest.svg
-[lic-url]: LICENSE.md
-[lic-img]: https://img.shields.io/npm/l/element-closest.svg
-[log-url]: CHANGELOG.md
-[log-img]: https://img.shields.io/badge/changelog-md-blue.svg
-[git-url]: https://gitter.im/jonathantneal/closest
-[git-img]: https://img.shields.io/badge/chat-gitter-blue.svg
+[closest]: https://github.com/jonathantneal/closest
