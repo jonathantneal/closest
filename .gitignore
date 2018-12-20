@@ -1,3 +1,9 @@
 node_modules
-*.log
-*.*cache
+package-lock.json
+*.log*
+.*
+!.editorconfig
+!.gitignore
+!.travis.yml
+/browser.*
+/index.*
