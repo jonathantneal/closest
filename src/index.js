@@ -3,8 +3,8 @@ export default function polyfill(window) {
 
 	if (typeof ElementPrototype.matches !== 'function') {
 		ElementPrototype.matches = ElementPrototype.msMatchesSelector || ElementPrototype.mozMatchesSelector || ElementPrototype.webkitMatchesSelector || function matches(selector) {
-			const elements = (element.document || element.ownerDocument).querySelectorAll(selector);
 			let element = this;
+			const elements = (element.document || element.ownerDocument).querySelectorAll(selector);
 			let index = 0;
 
 			while (elements[index] && elements[index] !== element) {
