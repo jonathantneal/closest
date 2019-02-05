@@ -1,5 +1,9 @@
 # Changes to closest
 
+### 3.0.1 (February 5, 2018)
+
+- Recompiled for npm distribution
+
 ### 3.0.0 (December 20, 2018)
 
 - Rewritten for usage within Node environments
