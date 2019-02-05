@@ -2,7 +2,7 @@
 
 ### 3.0.1 (February 5, 2018)
 
-- Recompiled for npm distribution
+- Fixed an issue where variables were declared out of order
 
 ### 3.0.0 (December 20, 2018)
 
