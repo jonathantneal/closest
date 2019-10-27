@@ -42,12 +42,22 @@ For immediate usage, add this script to your document:
 <script src="https://unpkg.com/element-closest/browser"></script>
 ```
 
-For Node usage, run [closest] with your `window` object:
+For Node usage, you will need to run [closest] with your `window` object **once** in map its *context*:
 
 ```js
 const elementClosest = require('element-closest');
 
 elementClosest(window); // this is used to reference window.Element
+```
+
+alternatively you can directly import the browser contextualized version like this
+
+```
+import 'element-closest/browser'
+```
+or
+```
+require('element-closest/browser');
 ```
 
 ## Browser compatibility
