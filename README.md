@@ -1,8 +1,8 @@
-# closest [<img src="https://jonathantneal.github.io/dom-logo.svg" alt="closest" width="90" height="90" align="right">][closest]
+# closest [<img src="https://jonneal.dev/dom-logo.svg" alt="closest" width="90" height="90" align="right">][closest]
 
-[![NPM Version][npm-img]][npm-url]
-[![Build Status][cli-img]][cli-url]
-[![Support Chat][git-img]][git-url]
+[<img alt="npm version" src="https://img.shields.io/npm/v/element-closest.svg" height="20">](https://www.npmjs.com/package/element-closest)
+[<img alt="build status" src="https://img.shields.io/travis/jonathantneal/closest/master.svg" height="20">](https://travis-ci.org/jonathantneal/closest)
+[<img alt="support chat" src="https://img.shields.io/badge/support-chat-blue.svg" height="20">](https://gitter.im/postcss/postcss)
 
 [closest] is a polyfill for [`#Element.closest`].
 
@@ -10,9 +10,7 @@
 npm install element-closest
 ```
 
-The [`#Element.closest`] method returns the closest element that matches a
-selector. It returns the element itself, one of its ancestor, or `null` if
-there isn't any match.
+The [`#Element.closest`] method returns the closest element that matches a selector. It returns the element itself, one of its ancestor, or `null` if there isn't any match.
 
 ```js
 element.closest(selectorString) //=> Element or null
@@ -32,17 +30,17 @@ document.addEventListener('click', function (event) {
 });
 ```
 
-The script is approximately 258 bytes when minified and gzipped.
+The script is approximately 428 bytes, or 257 bytes when gzipped.
 
 ## Usage
 
 For immediate usage, add this script to your document:
 
 ```html
-<script src="https://unpkg.com/element-closest/browser"></script>
+<script src="https://unpkg.com/element-closest"></script>
 ```
 
-For Node usage, run [closest] with your `window` object:
+For usage in Node, including Browserify and Webpack, run [closest] with your `window` object:
 
 ```js
 const elementClosest = require('element-closest');
@@ -67,20 +65,17 @@ elementClosest(window); // this is used to reference window.Element
 
 ### Internet Explorer 8
 
-`closest` is especially useful for delegating events, but remember that
-Internet Explorer 8 does not support [`#Element.addEventListener`].
+`closest` is especially useful for delegating events, but remember that Internet Explorer 8 does not support [`#Element.addEventListener`].
 
 ## matches
 
-This library also polyfills [`#Element.matches`], which is widely supported but
-often vendor-prefixed.
+This library also polyfills [`#Element.matches`], which is widely supported but often vendor-prefixed.
 
 ```js
 element.matches(selectorString) //=> boolean
 ```
 
-`matches` is especially useful for short-handing `hasAttribute` or
-`classList.contains` with selectors.
+`matches` is especially useful for short-handing `hasAttribute` or `classList.contains` with selectors.
 
 ```js
 const widget = document.querySelector('.custom-widget');
@@ -89,13 +84,6 @@ if (widget.matches('[data-active]') || widget.matches('.widget--active')) {
   // do something with the active widget
 }
 ```
-
-[cli-img]: https://img.shields.io/travis/jonathantneal/closest/master.svg
-[cli-url]: https://travis-ci.org/jonathantneal/closest
-[git-img]: https://img.shields.io/badge/support-chat-blue.svg
-[git-url]: https://gitter.im/postcss/postcss
-[npm-img]: https://img.shields.io/npm/v/element-closest.svg
-[npm-url]: https://www.npmjs.com/package/element-closest
 
 [`#Element.closest`]: https://dom.spec.whatwg.org/#dom-element-closest
 [`#Element.matches`]: https://dom.spec.whatwg.org/#dom-element-matches

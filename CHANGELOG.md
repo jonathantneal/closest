@@ -1,5 +1,9 @@
 # Changes to closest
 
+### 3.0.2 (October 31, 2019)
+
+- Improved how the file is distributed to Node and Web environments.
+
 ### 3.0.1 (February 5, 2018)
 
 - Fixed an issue where variables were declared out of order

@@ -2,13 +2,13 @@ import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
 const isBrowser = String(process.env.NODE_ENV).includes('browser');
-const targets = isBrowser ? 'last 2 versions, not dead' : { node: 6 };
+const targets = isBrowser ? 'ie >= 9' : { node: '0.12' };
 const input = 'src/index.js';
 const output = isBrowser
-	? { file: 'browser.js', format: 'cjs' }
+	? { file: 'browser.js', format: 'cjs', strict: false }
 : [
-	{ file: 'index.js', format: 'cjs', sourcemap: true },
-	{ file: 'index.mjs', format: 'esm', sourcemap: true }
+	{ file: 'index.js', format: 'cjs', sourcemap: true, strict: false },
+	{ file: 'index.mjs', format: 'esm', sourcemap: true, strict: false }
 ];
 const plugins = [
 	babel({
@@ -30,7 +30,7 @@ function trimContentForBrowser() {
 		name: 'trim-content-for-browser',
 		renderChunk(code) {
 			const updatedCode = code
-				.replace(/\s*'use strict';\s*function polyfill/, '!function')
+				.replace(/\s*function polyfill/, '!function')
 				.replace(/\s*module\.exports\s*=\s*polyfill;\s*/, '(window)');
 
 			return updatedCode;
